@@ -1105,7 +1105,7 @@ else if (text == '#foto'){
 conn.sendMessage(id, 'kirim .foto cewek/cowok\n\nContoh: .foto cewek' ,MessageType.text);
 }
 else if (text == '#menu'){
-conn.sendMessage(id, ' Thanks Telah Menggunakan BOT *XBOT* , Follow Instagram Mimin Yah� : https://instagram.com/@cogan_112' ,MessageType.text);
+conn.sendMessage(id, ' Thanks Telah Menggunakan BOT *kaum halu* , Follow Instagram Mimin Yah� :@cogan_112' ,MessageType.text);
 }
 else if (text == '#info'){
 conn.sendMessage(id, ' Thanks Telah Menggunakan BOT *XBOT* , Follow Instagram Mimin Yah� : https://instagram.com/@Cogan_112' ,MessageType.text);
