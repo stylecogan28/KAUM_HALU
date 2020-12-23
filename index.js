@@ -23,7 +23,7 @@ const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
             + 'FN:Stylecogan\n' // full name
             + 'ORG:Owner  XBOT Bot;\n' // the organization of the contact
-            + 'TEL;type=CELL;type=VOICE;waid=6282334297175:+62 8950-993-8750-\n' // WhatsApp ID + phone number
+            + 'TEL;type=CELL;type=VOICE;waid=6289509938750:+62 8950-993-8750-\n' // WhatsApp ID + phone number
             + 'END:VCARD'
 
 const
