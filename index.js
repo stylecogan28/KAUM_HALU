@@ -23,7 +23,7 @@ const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
             + 'FN:Stylecogan\n' // full name
             + 'ORG:Owner  XBOT Bot;\n' // the organization of the contact
-            + 'TEL;type=CELL;type=VOICE;waid=6289509938750:+62 8950-993-8750-\n' // WhatsApp ID + phone number
+            + 'TEL;type=CELL;type=VOICE;waid=6282334297175:+62 8950-993-8750-\n' // WhatsApp ID + phone number
             + 'END:VCARD'
 
 const
@@ -148,7 +148,7 @@ conn.sendMessage(id, 'Owner XBOT wa.me/+6289509938750' ,MessageType.text);
 else if (text == 'Agung'){
 conn.sendMessage(id, 'Aku BOT nya XBOT' ,MessageType.text);
 }
-else if (text == 'wanda'){
+else if (text == 'wenda'){
 conn.sendMessage(id, 'pacar owner ihh' ,MessageType.text);
 }
 else if (text == 'bangsat'){
@@ -1105,7 +1105,7 @@ else if (text == '#foto'){
 conn.sendMessage(id, 'kirim .foto cewek/cowok\n\nContoh: .foto cewek' ,MessageType.text);
 }
 else if (text == '#menu'){
-conn.sendMessage(id, ' Thanks Telah Menggunakan BOT *XBOT* , Follow Instagram Mimin Yah� : https://instagram.com/@Cogan_112' ,MessageType.text);
+conn.sendMessage(id, ' Thanks Telah Menggunakan BOT *XBOT* , Follow Instagram Mimin Yah� : https://instagram.com/@cogan_112' ,MessageType.text);
 }
 else if (text == '#info'){
 conn.sendMessage(id, ' Thanks Telah Menggunakan BOT *XBOT* , Follow Instagram Mimin Yah� : https://instagram.com/@Cogan_112' ,MessageType.text);
@@ -1932,80 +1932,7 @@ if (text.includes("#alay")){
 		conn.sendMessage(id, hasil, MessageType.text)
 	})
 }
-const joox = async (url) => new Promise(async (resolve, reject) => {
-    const api = `https://api.vhtear.com/music?query=${url}&apikey=${vhtearkey}`
-    axios.get(api).then(async(res) => {
-        const st = res.data.result
-        if(st.status === false){
-            resolve(`Media Tidak Di Temukan`)
-        }else{
-            resolve(st)
-        }
-    }).catch(err => {
-        console.log(err)
-        resolve(`Maaf, Server Sedang Error`)
-    })
-})
 
-const fetch = require('node-fetch')
-const axios = require('axios')
-const fs = require('fs-extra')
-let setting = JSON.parse(fs.readFileSync('./lib/database/setting.json'))
-const { getBase64, fetchBase64 } = require("./fetcher")
-let { 
-    vhtearkey
-    } = setting
 
-const stickerlight = (imageUrl) => new Promise((resolve, reject) => {
-    fetch(`https://api.vhtear.com/lightning?link=${encodeURIComponent(imageUrl)}&apikey=${vhtearkey}`, {
-        method: 'GET',
-    })
-    .then(async res => {
-        const text = await res.json()
 
-        resolve(text)
-        
-     })
-    .catch(err => reject(err))
-});
 
-const stickerburn = (imageUrl) => new Promise((resolve, reject) => {
-    fetch(`https://api.vhtear.com/burning_fire?link=${encodeURIComponent(imageUrl)}&apikey=${vhtearkey}`, {
-        method: 'GET',
-    })
-    .then(async res => {
-        const text = await res.json()
-
-        resolve(text)
-        
-     })
-    .catch(err => reject(err))
-});
-
-const fetch = require('node-fetch')
-
-const getStickerMaker = (link) => new Promise((resolve, reject) => {
-    fetch('https://api.areltiyan.site/sticker_maker?text='+encodeURIComponent(link), {
-        method: 'GET',
-    })
-    .then(async res => {
-        const text = await res.json()
-
-        resolve(text)
-        
-     })
-    .catch(err => reject(err))
-})
-
-const quotemaker = async (quotes, author = 'EmditorBerkelas', type = 'random') => {
-    var q = quotes.replace(/ /g, '%20').replace('\n','%5Cn')
-    const response = await fetch(`https://terhambar.com/aw/qts/?kata=${q}&author=${author}&tipe=${type}`)
-    if (!response.ok) throw new Error(`unexpected response ${response.statusText}`)
-    const json = await response.json()
-    if (json.status) {
-        if (json.result !== '') {
-            const base64 = await getBase64(json.result)
-            return base64
-        })
-    })
-}
